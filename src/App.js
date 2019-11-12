@@ -45,7 +45,7 @@ class App extends Component {
       const data = {file: reader.result}
 
       // post data to the api:
-      axios.post('http://localhost:3000/api/validateFile/', data)
+      axios.post('https://stormy-woodland-24325.herokuapp.com/api/validateFile/', data)
       .then(async (res) => {
         // if response is empty throw an error:
         if (res === null || res === undefined) throw new Error("received empty response");
@@ -69,7 +69,7 @@ class App extends Component {
     if(this.state.iban === "") return;
 
     // get data from the api:
-    axios.get('http://localhost:3000/api/validateSingle/', {
+    axios.get('https://stormy-woodland-24325.herokuapp.com/api/validateSingle/', {
       params: {
         ibanCode : this.state.iban // include the iban string as a parameter to be sent
       }
